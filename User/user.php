@@ -1,0 +1,13 @@
+<?php
+include("../inc/header.php");
+include("../core/functions.php");
+include("userNav.php");
+include("../inc/footer.php");
+if(!$_SESSION['userAuth']){
+    redirect("../login.php");
+    die;
+}
+else{
+    redirect("allProducts.php");
+    die;
+}
