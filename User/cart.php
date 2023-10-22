@@ -21,7 +21,7 @@ while($row = mysqli_fetch_assoc($result)):
       <div class="card-body">
         <h5 class="card-title"><?php echo $row2['name'] ?></h5>
         <p class="card-text"><?php echo $row2['description'] ?></p>
-        <a href="delete.php?id={$row2['id']}" class="btn btn-danger m-auto fs-5 mt-5 ms-5"><i class="fa-solid fa-trash"></i></a>
+        <a href="delete.php?id=<?php echo$row2['id']?>" class="btn btn-danger m-auto fs-5 mt-5 ms-5"><i class="fa-solid fa-trash"></i></a>
       </div>
       
     </div>
