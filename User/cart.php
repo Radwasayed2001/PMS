@@ -2,6 +2,9 @@
 include("../core/functions.php");
 include("../inc/header.php");
 include("userNav.php");
+if(!isset($_SESSION['userAuth'])){
+  redirect('../login.php');
+}
 $conn = mysqli_connect("localhost", "root", "", "product management system");
 $sql = "SELECT * FROM `carts_products` WHERE `user_id` = {$_SESSION['userAuth']}";
 $result = mysqli_query($conn, $sql);

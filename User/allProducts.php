@@ -3,6 +3,9 @@ include('../inc/header.php');
 include('userNav.php');
 include("../core/functions.php");
 if(!isset($_SESSION['userAuth'])){
+  redirect('../login.php');
+}
+if(!isset($_SESSION['userAuth'])){
     redirect('../login.php');
     die;
   }

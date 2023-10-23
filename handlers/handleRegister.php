@@ -55,7 +55,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             redirect('../register.php');
             die;
         }
-        $_SESSION['userAuth'] = 1;
+        $sql2 = "SELECT * FROM `users` WHERE `username` = '$username'";
+        $result2 = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_assoc($result2);
+        $_SESSION['userAuth'] = $row2['id'];
+        echo "this is the session: {$_SESSION['userAuth']}";
         redirect('../User/user.php');
         die;
     }

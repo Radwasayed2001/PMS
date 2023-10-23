@@ -1,5 +1,6 @@
 <?php
 include('../core/functions.php');
+
 if(!isset($_SESSION['userAuth'])){
     redirect('../login.php');
     die;

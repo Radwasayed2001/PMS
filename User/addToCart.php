@@ -1,6 +1,10 @@
 <?php
 include("../core/functions.php");
+if(!isset($_SESSION['userAuth'])){
+    redirect('../login.php');
+}
 if($_SERVER['REQUEST_METHOD'] == "GET") {
+    
     if(isset($_GET['id'])){
         $id = $_GET['id'];
         $conn = mysqli_connect("localhost", "root", "", "product management system");
